@@ -1,0 +1,34 @@
+apply plugin: 'java'
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+def VERSION = '1.0'
+def BASE_NAME = 'QRtool'
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+jar {
+    baseName BASE_NAME
+    version VERSION
+
+    //把第三方依赖jar包的class一起打包进去
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes(
+                'Implementation-Title': 'Gradle Quickstart',
+                'Implementation-Version': 1,
+                'Main-Class': 'com.kecson.QRCodeTool',
+        )
+    }
+
+}
+
+
+
+
