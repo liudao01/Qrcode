@@ -1,4 +1,5 @@
 ### QRtool 是一个生成二维码和解析二维码工具， [github地址](www.github.com/kecson/JavaProject) <br/>
+####[下载jar包](https://github.com/kecson/JavaProject/blob/master/QRtool-1.0.jar)
 命令参数：<br/>
  * -h       显示此帮助信息 <br/>
  * -e       生成二维码 <br/>
